@@ -24,7 +24,7 @@
             </div>
             <div class="col-12">
               <label for="inputService" class="form-label">Servicio</label>
-              <select id="inputService" class="form-select" name="serviceId">
+              <select onchange="onServiceChange(event)" id="inputService" class="form-select" name="serviceId">
                 <option value="" selected>Seleccione...</option>
                 <option value="1">Web</option>
                 <option value="2">Movil</option>
@@ -79,6 +79,15 @@
                 e.preventDefault() // Previene que se haga submit del formulario
                 return
             }
+        }
+
+        function onServiceChange(event) {
+          console.log(event.target.value)
+
+          const service = document.getElementById("inputService")
+          console.log("valor desde javascript: ", service.value)
+
+          alert("cambio al valor: " + event.target.value)
         }
     </script>
   </body>

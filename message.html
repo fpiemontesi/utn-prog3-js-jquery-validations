@@ -8,7 +8,13 @@
 <body>
     Formulario enviado
 
-    <div id="message"></div>
+    <div id="message">
+        <label>Email:</label>
+        <span id="email"></span>
+
+        <label>Clave:</label>
+        <span id="clave"></span>
+    </div>
     <script>
         const params = new URLSearchParams(
             window.location.search
@@ -20,13 +26,22 @@
             "\nservicio: " + params.get("serviceId") 
         )
 
-        const message = document.getElementById(
-            "message"
-        )
+        // const message = document.getElementById(
+        //     "message"
+        // )
 
-        message.innerText = localStorage.getItem(
-            "email"
-        )
+        // message.innerText = localStorage.getItem(
+        //     "email"
+        // ) + " " + localStorage.getItem(
+        //     "clave"
+        // )
+
+        const email = document.getElementById("email")
+        email.innerText = localStorage.getItem("email")
+
+        
+        const clave = document.getElementById("clave")
+        clave.innerText = localStorage.getItem("clave")
     </script>
 </body>
 </html>
